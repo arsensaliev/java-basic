@@ -129,26 +129,30 @@ public class Main {
 
     public static void seventhTask(int n) {
         int[] arr = {3, 5, 7, 10};
-        // 0 < -2 false
-        for (int k = 0; k > n; k--) {
-            int val = arr[0];
-            int right = arr[arr.length - 1];
-            if (n > 0) {
+        System.out.println("До: " + Arrays.toString(arr));
+        if (n > 0) {
+            for (int k = 0; k < n; k++) {
+                int val = arr[arr.length - 1];
+
                 for (int i = arr.length - 1; i != 0; i--) {
                     arr[i] = arr[i - 1];
                 }
-                arr[0] = right;
-            } else if (n < 0) {
+
+                arr[0] = val;
+            }
+        } else if (n < 0) {
+            for (int k = 0; k > n; k--) {
+                int val = arr[0];
+
                 for (int i = 0; i < arr.length - 1; i++) {
                     arr[i] = arr[i + 1];
                 }
                 arr[arr.length - 1] = val;
-            } else {
-                System.out.println("Без изменении");
             }
+        } else {
+            System.out.println("Без изменении");
         }
 
-
-        System.out.println(Arrays.toString(arr));
+        System.out.println("После: " + Arrays.toString(arr));
     }
 }
