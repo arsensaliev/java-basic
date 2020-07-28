@@ -12,15 +12,15 @@ public class Main {
 
     // 2
     public static void variables() {
-        byte b;
-        short s;
-        int integer;
-        long l;
-        float fl;
-        double db;
-        char symbol;
-        boolean bool;
-        String str;
+        // byte b;
+        // short s;
+        // int integer;
+        // long l;
+        // float fl;
+        // double db;
+        // char symbol;
+        // boolean bool;
+        // String str;
     }
 
     // 3
