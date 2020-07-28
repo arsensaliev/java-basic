@@ -16,9 +16,9 @@ public class Main2 {
 
     public static void startGameRandomWords() {
         System.out.println("Игра угадай слово!\n");
-        String[] arr = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot",
-                "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea",
-                "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
+        String[] arr = { "apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry",
+                "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut",
+                "pear", "pepper", "pineapple", "pumpkin", "potato" };
 
         System.out.println("Угадайте одно слово из списка перечисленных:\n" + Arrays.toString(arr));
 
@@ -33,7 +33,7 @@ public class Main2 {
             if (word.equals(value)) {
                 System.out.println("Вы угадали слово");
                 break;
-            } else{
+            } else {
                 helpWord(word, value);
                 System.out.println("\nПопробуй ёщё раз");
             }
@@ -43,14 +43,16 @@ public class Main2 {
     public static void helpWord(String word, String value) {
         for (int i = 0; i < word.length(); i++) {
             char a = word.charAt(i);
-            char b = value.charAt(value.length() - 1 - i < 0 ? 0 : i);
+            char b = value.length() > i ? value.charAt(i) : '#';
+
             if (a == b) {
                 System.out.print(a);
-            } else{
+            } else {
                 System.out.print("#");
             }
         }
-        for (int i = 0; i < 15; i++) {
+
+        for (int i = word.length(); i < 15; i++) {
             System.out.print("#");
         }
     }
